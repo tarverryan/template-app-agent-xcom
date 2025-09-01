@@ -1,0 +1,42 @@
+{
+  "name": "template-app-agent-xcom",
+  "version": "1.0.0",
+  "description": "X.com bot template with customizable personality and automated posting",
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "scripts": {
+    "dev": "docker-compose up --build",
+    "build": "docker-compose build",
+    "logs": "docker-compose logs -f",
+    "clean": "docker-compose down -v && docker system prune -f",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "qa": "ts-node scripts/qa-post-checker.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tarverryan/template-app-agent-xcom.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "ai",
+    "automation",
+    "docker",
+    "template",
+    "xcom"
+  ],
+  "author": "Template Author",
+  "license": "MIT"
+}

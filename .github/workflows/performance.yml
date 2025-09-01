@@ -1,0 +1,41 @@
+name: Performance Monitoring
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # Every Sunday at 3 AM
+  workflow_dispatch:
+
+jobs:
+  performance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: app/app-agent-xcom-template/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd app/app-agent-xcom-template
+          npm ci
+
+      - name: Run performance tests
+        run: |
+          cd app/app-agent-xcom-template
+          npm run test:performance
+
+      - name: Generate performance report
+        run: |
+          cd app/app-agent-xcom-template
+          npm run perf:report
+
+      - name: Upload performance results
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: app/app-agent-xcom-template/performance-report.json

@@ -1,0 +1,47 @@
+# X.com Bot Template - Configurable Schedule
+app-agent-xcom-template:
+  build:
+    context: ./app/app-agent-xcom-template
+    dockerfile: Dockerfile
+  container_name: app-agent-xcom-template
+  env_file:
+    - ./app/app-agent-xcom-template/.env
+  volumes:
+    - ./app/app-agent-xcom-template/data:/app/data
+    - ./app/app-agent-xcom-template/logs:/app/logs
+  ports:
+    - "3000:3000"
+  restart: unless-stopped
+  environment:
+    - NODE_ENV=production
+    - TZ=UTC
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+    start_period: 40s
+  networks:
+    - app-agent-xcom-template-network
+  depends_on:
+    - app-agent-xcom-template_data
+
+# Health monitoring
+health-monitor:
+  image: nginx:alpine
+  container_name: health-monitor
+  ports:
+    - "8080:80"
+  volumes:
+    - ./health-monitor.conf:/etc/nginx/conf.d/default.conf
+  restart: unless-stopped
+  networks:
+    - app-agent-xcom-template-network
+
+networks:
+  app-agent-xcom-template-network:
+    driver: bridge
+
+volumes:
+  app-agent-xcom-template_data:
+    driver: local

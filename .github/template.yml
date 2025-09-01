@@ -1,0 +1,86 @@
+# GitHub Template Configuration
+# This file customizes the experience when users create a new repository from this template
+
+# Template name and description
+name: X.com Bot Template
+description: A sophisticated X.com (Twitter) bot template with customizable personality and automated posting capabilities
+
+# Template icon (emoji)
+icon: 🤖
+
+# Template color (hex)
+color: 1DA1F2
+
+# Template topics/tags
+topics:
+  - twitter
+  - bot
+  - ai
+  - automation
+  - docker
+  - typescript
+  - nodejs
+  - openai
+  - social-media
+  - template
+
+# Template homepage URL
+homepage: https://github.com/tarverryan/template-app-agent-xcom
+
+# Template documentation URL
+documentation: https://github.com/tarverryan/template-app-agent-xcom#readme
+
+# Template license
+license: MIT
+
+# Template maintainers
+maintainers:
+  - tarverryan
+
+# Template repository settings
+repository:
+  # Default branch name
+  default_branch: main
+  
+  # Auto-delete head branches
+  delete_branch_on_merge: true
+  
+  # Allow squash merging
+  allow_squash_merge: true
+  
+  # Allow merge commits
+  allow_merge_commit: true
+  
+  # Allow rebase merging
+  allow_rebase_merge: true
+
+# Template features
+features:
+  # Enable issues
+  issues: true
+  
+  # Enable projects
+  projects: true
+  
+  # Enable wiki
+  wiki: false
+  
+  # Enable discussions
+  discussions: true
+  
+  # Enable security advisories
+  security: true
+  
+  # Enable dependency graph
+  dependency_graph: true
+  
+  # Enable Dependabot alerts
+  dependabot_alerts: true
+
+# Template social preview
+social_preview:
+  # Social preview image
+  image: .github/social-preview.png
+  
+  # Social preview text
+  text: "Create your own X.com bot with AI-powered content generation and automated posting"

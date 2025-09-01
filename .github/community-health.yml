@@ -1,0 +1,50 @@
+# Community Health Configuration
+# This file configures the community health files for the repository
+
+# Repository administrators
+repository_admins:
+  - tarverryan
+
+# Issue templates
+issue_templates:
+  - name: Bug Report
+    about: Create a report to help us improve
+    title: "[Bug]: "
+    labels: ["bug", "triage"]
+  - name: Feature Request
+    about: Suggest an idea for this project
+    title: "[Feature]: "
+    labels: ["enhancement", "triage"]
+  - name: Question
+    about: Ask a question about this project
+    title: "[Question]: "
+    labels: ["question", "triage"]
+
+# Pull request template
+pull_request_template: true
+
+# Contributing guidelines
+contributing: CONTRIBUTING.md
+
+# Code of conduct
+code_of_conduct: CODE_OF_CONDUCT.md
+
+# License
+license: LICENSE
+
+# Security policy
+security: SECURITY.md
+
+# Support
+support:
+  url: https://github.com/tarverryan/template-app-agent-xcom/discussions
+  type: Discussions
+
+# Community standards
+community_standards:
+  - code_of_conduct
+  - contributing
+  - issue_templates
+  - pull_request_template
+  - security
+  - support

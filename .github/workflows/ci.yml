@@ -42,7 +42,7 @@ jobs:
         npm run build
 
     - name: Upload coverage reports
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
       with:
         file: ./app/app-agent-xcom-template/coverage/lcov.info
         flags: template-bot
